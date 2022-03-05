@@ -105,4 +105,16 @@ Label language multi ...
 '''
 ```
 
+- If Alt-ZSC is not based on NLI/XNLI (unlike ZSC) why does it support hypothesis templates?
+Longer fluent sentences with context offer a nice prefix to the labels, it gives developers an option to squeeze better scores if needed. So feel free to use when you see fit. 
+
+```python
+preds = zstc(text="Do dogs really make better pets than cats or hamsters?",
+            candidate_labels=["kittens", "hamsters", "cats", "dogs"], 
+            hypothesis_template = "This is {}"
+            )
+```            
+            
+
+
 
