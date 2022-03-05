@@ -43,7 +43,7 @@ Label language en ...
 ### FAQ
 
 - Multi-lingual option covers english why use OpenAI CLIP for "en" ?
-OpenCLIP uses a Custom base BERT-ish transformer with some ideas from GPT2 (as per the paper, see blow), but ```sentence-transformers/clip-ViT-B-32-multilingual-v1``` uses ```distilbert-base-multilingual-cased```. It means in practice OpenCLIP text backbone gives a better score than ```distilbert```. For instance, trying the same english example shows the difference in scores. While nothing stops you from using english text/labels under ```multi```, OpenAI CLIP is used as the default for the better scores it can give for english text.
+OpenCLIP uses a Custom base BERT-ish transformer with some ideas from GPT2 (as per the paper, see blow), but ```sentence-transformers/clip-ViT-B-32-multilingual-v1``` uses ```distilbert-base-multilingual-cased```. It means in practice OpenCLIP text backbone gives a better score than ```distilbert```. For instance, trying the same english example shows the difference in scores (check the scores and label order below). While nothing stops you from using english text/labels under ```multi```, Alt-ZSC uses OpenAI CLIP as default for the better scores it can give for english text.
 
 
 >The text encoder is a Transformer (Vaswani et al., 2017)
