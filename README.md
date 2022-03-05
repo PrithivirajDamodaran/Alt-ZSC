@@ -106,7 +106,7 @@ Label language multi ...
 ```
 
 - If Alt-ZSC is not based on NLI/XNLI (unlike ZSC) why does it support hypothesis templates?
-- [Ans] Longer fluent sentences with context offer a nice prefix to the labels, it gives developers an option to squeeze better scores if needed. So feel free to use when you see fit. 
+- [Ans] Longer fluent sentences with context offer a nice prefix to the labels, it gives developers an option to squeeze better scores if needed (as per the CLIP paper, see below). So feel free to use when you see fit. 
 
 ```python
 preds = zstc(text="Do dogs really make better pets than cats or hamsters?",
@@ -115,6 +115,16 @@ preds = zstc(text="Do dogs really make better pets than cats or hamsters?",
             )
 ```            
             
+>Another issue we encountered is that it’s relatively rare in
+our pre-training dataset for the text paired with the image
+to be just a single word. Usually the text is a full sentence
+describing the image in some way. To help bridge this
+distribution gap, we found that using the prompt template
+“A photo of a {label}.” to be a good default that
+helps specify the text is about the content of the image. This
+often improves performance over the baseline of using only
+the label text. For instance, just using this prompt improves
+accuracy on ImageNet by 1.3%.            
 
 
 
