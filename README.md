@@ -1,6 +1,6 @@
 # Alt-ZSC - An Alternate Implementation for Zero Shot Text Classification
 
-### What? 
+### What is Alt-ZSC? 
 * Intentionally super simple yet useful if you are $ concious.
 * Instead of reframing NLI/XNLI, Alt-ZSC reframes the text backbone of CLIP models to do ZSC. Perks can be, lightweight + supports more languages without trading-off accuracy, especially if you are using ZSC in a Low code or Auto* libraries or simply looking to do weak labelling.
 * Standing on the shoulder of gaints - OpenAI , Sentence-Transformers, HuggingFace, 
