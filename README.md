@@ -9,7 +9,7 @@
 
 ### Why Alt-ZSC can be attractive?
 
-<img src="./images/ZSC vs Alt-ZSC.png" width="900">
+<img src="./images/Comparison.png" width="900">
 
 
 ### Installation
