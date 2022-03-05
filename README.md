@@ -40,4 +40,45 @@ Label language en ...
 '''
 ```
 
+### FAQ
+
+- Multi-lingual option covers english why use OpenAI CLIP for "en" ?
+OpenCLIP uses a Custom base BERT-ish transformer with some ideas from GPT2 (as per the paper, see blow), but ```sentence-transformers/clip-ViT-B-32-multilingual-v1``` uses ```distilbert-base-multilingual-cased```. It means in practice OpenCLIP text backbone gives a better score than ```distilbert```. For instance, trying the same english example shows the difference in scores. While nothing stops you from using english text/labels under ```multi```, OpenAI CLIP is used as the default for the better scores it can give for english text.
+
+
+>The text encoder is a Transformer (Vaswani et al., 2017)
+with the architecture modifications described in Radford
+et al. (2019). As a base size we use a 63M-parameter 12-
+layer 512-wide model with 8 attention heads. The transformer operates on a lower-cased byte pair encoding (BPE)
+representation of the text with a 49,152 vocab size (Sennrich et al., 2015). For computational efficiency, the max
+sequence length was capped at 76. The text sequence is
+bracketed with [SOS] and [EOS] tokens and the activations of the highest layer of the transformer at the [EOS]
+token are treated as the feature representation of the text
+which is layer normalized and then linearly projected into
+the multi-modal embedding space. Masked self-attention
+was used in the text encoder to preserve the ability to initialize with a pre-trained language model or add language
+modeling as an auxiliary objective, though exploration of
+this is left as future work.
+
+```python
+zstc = ZeroShotTextClassification(lang="multi")
+
+preds = zstc(text="Do dogs really make better pets than cats or hamsters?",
+            candidate_labels=["kittens", "hamsters", "cats", "dogs"], 
+            )
+            
+print(preds)
+
+
+'''
+prints the following
+Loading sentence transformer model sentence-transformers/clip-ViT-B-32-multilingual-v1 ...
+Label language multi ...
+
+{'text': 'Do dogs really make better pets than cats or hamsters?', 
+'scores': (0.93635553, 0.06061751, 0.0016885924, 0.0013383164), 
+'labels': ('dogs', 'cats', 'kittens', 'hamsters')}
+'''
+```
+
 
