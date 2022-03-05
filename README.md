@@ -3,16 +3,17 @@ Alternate Implementation for Zero Shot Text Classification:
 
 
 * Intentionally super simple yet useful.
-* Why?
+* Why Alt-ZSC can be attractive for some users?
 
 ZSC vs Alt-ZSC
 
 Size
 
-facebook/bart-large-mnli - 1.5G
-joeddav/xlm-roberta-large-xnli - 2G
+English  - facebook/bart-large-mnli - 1.5G
+Mulitlingual - joeddav/xlm-roberta-large-xnli - 2G
 
-sentence-transformers/clip-ViT-B-32-multilingual-v1 - 500M
+English - Custom base size BERT-ish transformer with some ideas from GPT2 (as per the paper) - <= 500M
+Mulitlingual - sentence-transformers/clip-ViT-B-32-multilingual-v1 (Internally uses distilbert-base-multilingual-cased) - 500M
 
 
 ### Installation
