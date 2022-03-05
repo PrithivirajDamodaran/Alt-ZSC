@@ -1,4 +1,4 @@
-# Alt-ZSC - An Alternate Implementation for Zero Shot Text Classification
+# An Alternate Implementation for Zero Shot Text Classification
 
 ### What is Alt-ZSC? 
 * Intentionally super simple yet useful if you are $ concious.
