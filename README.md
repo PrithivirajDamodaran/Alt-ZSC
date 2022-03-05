@@ -21,6 +21,8 @@
 #### English
 
 ```python
+from AltZSC import ZeroShotTextClassification
+
 zstc = ZeroShotTextClassification()
 
 preds = zstc(text="Do dogs really make better pets than cats or hamsters?",
@@ -85,6 +87,7 @@ modeling as an auxiliary objective, though exploration of
 this is left as future work.
 
 ```python
+
 zstc = ZeroShotTextClassification(lang="multi")
 
 preds = zstc(text="Do dogs really make better pets than cats or hamsters?",
