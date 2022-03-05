@@ -2,8 +2,8 @@
 
 ### What is Alt-ZSC? 
 * Intentionally super simple yet useful if you are $ concious.
-* Instead of reframing NLI/XNLI, Alt-ZSC reframes the text backbone of CLIP models to do ZSC. Perks can be, lightweight + supports more languages without trading-off accuracy, especially if you are using ZSC in a Low code or Auto* libraries or simply looking to do weak labelling.
-* In some cases CLIP based Alt-ZSC models gives better accuracy than NLI/XNLI based ZSC. (Not a benchmark but from casual tests)
+* Instead of reframing NLI/XNLI, Alt-ZSC reframes the text backbone of CLIP models to do ZSC. Perks can be, **lightweight + supports more languages without trading-off accuracy**, especially if you are using ZSC in a Low code or Auto* libraries or simply looking to do weak labelling.
+* In some cases **CLIP based Alt-ZSC models gives better accuracy than NLI/XNLI based ZSC**. (Not a benchmark but from casual tests)
 * Standing on the shoulder of gaints - OpenAI CLIP, Sentence-Transformers, HuggingFace Transformers, 
 
 
