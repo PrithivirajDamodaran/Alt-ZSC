@@ -18,3 +18,26 @@
 
 ### Usage
 
+#### English
+
+```python
+zstc = ZeroShotTextClassification()
+
+preds = zstc(text="Do dogs really make better pets than cats or hamsters?",
+            candidate_labels=["kittens", "hamsters", "cats", "dogs"], 
+            )
+            
+print(preds)
+
+'''
+prints the following
+Loading OpenAI CLIP model ViT-B/32 ...
+Label language en ...
+
+{'text': 'Do dogs really make better pets than cats or hamsters?', 
+'scores': (0.988218, 0.011007968, 0.0007573191, 1.6704575e-05), 
+'labels': ('dogs', 'cats', 'hamsters', 'kittens')}
+'''
+```
+
+
