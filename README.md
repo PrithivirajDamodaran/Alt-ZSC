@@ -66,6 +66,68 @@ Label language multi ...
 
 ```
 
+### You can use it with over 50 languages
+```python
+#View Supported lang codes
+zstc.available_languages()
+
+#Prints the following
+
+{'ar',
+ 'bg',
+ 'ca',
+ 'cs',
+ 'da',
+ 'de',
+ 'el',
+ 'en',
+ 'es',
+ 'et',
+ 'fa',
+ 'fi',
+ 'fr',
+ 'fr-ca',
+ 'gl',
+ 'gu',
+ 'he',
+ 'hi',
+ 'hr',
+ 'hu',
+ 'hy',
+ 'id',
+ 'it',
+ 'ja',
+ 'ka',
+ 'ko',
+ 'ku',
+ 'lt',
+ 'lv',
+ 'mk',
+ 'mn',
+ 'mr',
+ 'ms',
+ 'my',
+ 'nb',
+ 'nl',
+ 'pl',
+ 'pt',
+ 'pt-br',
+ 'ro',
+ 'ru',
+ 'sk',
+ 'sl',
+ 'sq',
+ 'sr',
+ 'sv',
+ 'th',
+ 'tr',
+ 'uk',
+ 'ur',
+ 'vi',
+ 'zh-cn',
+ 'zh-tw'}
+ ```
+
 ### FAQ
 
 - Multi-lingual option covers english why use OpenAI CLIP for "en" ?
