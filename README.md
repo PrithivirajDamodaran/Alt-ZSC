@@ -3,6 +3,7 @@ Alternate Implementation for Zero Shot Text Classification:
 
 
 * Intentionally super simple yet useful.
+* Standing on the shoulder of gaints - HuggingFace
 * Why Alt-ZSC can be attractive for some users?
 
 ZSC vs Alt-ZSC
