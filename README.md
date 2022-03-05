@@ -2,7 +2,7 @@
 
 ### what? 
 * Intentionally super simple yet useful.
-* Instead of reframing NLI/XNLI, Alt-ZSC reframes the text backbone of CLIP models to do ZSC. Perks are can be lightweight + supports more languages without trading-off accuracy. 
+* Instead of reframing NLI/XNLI, Alt-ZSC reframes the text backbone of CLIP models to do ZSC. Perks are can be lightweight + supports more languages without trading-off accuracy, especially if you are looking to do weak labelling.
 * Standing on the shoulder of gaints - OpenAI , Sentence-Transformers, HuggingFace, 
 
 
