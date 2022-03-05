@@ -40,6 +40,29 @@ Label language en ...
 '''
 ```
 
+#### Spanish
+
+```python
+zstc = ZeroShotTextClassification(lang="multi")
+
+preds = zstc(text="¿Los perros realmente son mejores mascotas que los gatos o los hámsters?",
+            candidate_labels=["gatita", "perros", "gatas","leonas"],
+            )
+            
+print(preds)
+
+
+'''
+prints the following
+Loading sentence transformer model sentence-transformers/clip-ViT-B-32-multilingual-v1 ...
+Label language multi ...
+
+{'text': '¿Los perros realmente son mejores mascotas que los gatos o los hámsters?', 
+'scores': (0.99424934, 0.002653174, 0.002569642, 0.0005278819),
+'labels': ('perros', 'gatas', 'gatita', 'leonas')}
+
+```
+
 ### FAQ
 
 - Multi-lingual option covers english why use OpenAI CLIP for "en" ?
