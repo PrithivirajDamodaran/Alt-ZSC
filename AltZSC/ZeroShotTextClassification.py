@@ -125,11 +125,9 @@ class ZeroShotTextClassification():
             scores = list(probs.flatten())
 
             sorted_sl = sorted(zip(scores, candidate_labels), key=lambda t:t[0], reverse=True)  
-            scores, candidate_labels = zip(*sorted_sl)
-            
+
             pred["text"] = textlet
-            pred["scores"] = scores
-            pred["labels"] = candidate_labels
+            pred["scores"], pred["labels"] = zip(*sorted_sl)
             preds.append(pred)
 
         if len(preds) == 1:
