@@ -60,7 +60,7 @@ class ZeroShotTextClassification():
 
   def __call__(
         self, 
-        text: str,
+        text: Union[str, List[str]],
         candidate_labels: Union[str, List[str]],
         *args,
         **kwargs,
@@ -70,8 +70,8 @@ class ZeroShotTextClassification():
         Classify the text using the candidate labels given
 
         Args:
-            text (`str`):
-                Text to be classified
+            text (`str` or `List[str]`):
+                Text to be classified, Can be a string or list of strings
             candidate_labels (`str` or `List[str]`):
                 The set of possible class labels to classify each sequence into. Can be a single label, a string of
                 comma-separated labels, or a list of labels.
@@ -110,18 +110,29 @@ class ZeroShotTextClassification():
             labels_features = torch.tensor(self.model.encode(labels))
         
         sim_scores = util.cos_sim(text_features, labels_features)
-        out = []
-        for sim_score in sim_scores[0]:
-            out.append(sim_score.item() * 100)
-        probs = torch.tensor([out])
-        probs = probs.softmax(dim=-1).cpu().numpy()
-        scores = list(probs.flatten())
+        preds = []
 
-        sorted_sl = sorted(zip(scores, candidate_labels), key=lambda t:t[0], reverse=True)  
-        scores, candidate_labels = zip(*sorted_sl)
+        if isinstance(text, str):
+            text = [text]
 
-        preds = {}
-        preds["text"] = text
-        preds["scores"] = scores
-        preds["labels"] = candidate_labels
-        return preds
+        for textlet, sim_score in zip(text, sim_scores):
+            out = []
+            pred = {}
+            for raw_score in sim_score:
+                out.append(raw_score.item() * 100)
+            probs = torch.tensor([out])
+            probs = probs.softmax(dim=-1).cpu().numpy()
+            scores = list(probs.flatten())
+
+            sorted_sl = sorted(zip(scores, candidate_labels), key=lambda t:t[0], reverse=True)  
+            scores, candidate_labels = zip(*sorted_sl)
+            
+            pred["text"] = textlet
+            pred["scores"] = scores
+            pred["labels"] = candidate_labels
+            preds.append(pred)
+
+        if len(preds) == 1:
+          return preds[0]
+        else:
+          return preds
