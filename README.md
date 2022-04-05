@@ -9,7 +9,7 @@
 
 ### Why Alt-ZSC can be attractive?
 
-<img src="./images/Comparison.png" width="900">
+<img src="./images/Comparisonv1.png" width="900">
 
 
 ### Installation
@@ -134,7 +134,7 @@ zstc.available_languages()
 - **CLIP Text backbone has a token limit of 77, how to use Alt-ZSC with longer text ?**
 - The text param can be string or list of strings, for longer texts, you can split the text and pass it as a list of strings.
 - **Multi-lingual option covers english why use OpenAI CLIP for "en" ?**
-- OpenCLIP uses a Custom base BERT-ish transformer with some ideas from GPT2 (as per the paper, see blow), but ```sentence-transformers/clip-ViT-B-32-multilingual-v1``` uses ```distilbert-base-multilingual-cased```. It means in practice OpenCLIP text backbone gives a better score than ```distilbert```. For instance, trying the same english example shows the difference in scores (check the scores and label order below). While nothing stops you from using english text/labels under ```multi```, Alt-ZSC uses OpenAI CLIP as default for the better scores it can give for english text.
+- OpenCLIP uses a Custom base Transformer with some ideas from GPT (as per the paper, see blow), but ```sentence-transformers/clip-ViT-B-32-multilingual-v1``` uses ```distilbert-base-multilingual-cased```. It means in practice OpenCLIP text backbone gives a better score than ```distilbert```. For instance, trying the same english example shows the difference in scores (check the scores and label order below). While nothing stops you from using english text/labels under ```multi```, Alt-ZSC uses OpenAI CLIP as default for the better scores it can give for english text.
 
 
 >The text encoder is a Transformer (Vaswani et al., 2017)
